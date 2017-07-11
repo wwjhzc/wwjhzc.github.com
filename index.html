@@ -1,172 +1,115 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        body{
-            background-color: skyblue;
-        }
-        h1{
-            text-align: center;
-            font: 60px "微软雅黑";
-        }
-        h3{
-            text-align: right;
-
-        }
-        .div1{
-            width: 900px;
-            border: 1px solid gray;
-            height: 100px;
-            margin: 50px auto 0;
-            display: block;
-        }
-        .div1 div{
-            width: 150px;
-            height: 100px;
-            float: left;
-            margin-right: 18px;
-        }
-        .div1 .box1,.div1 .box3,.div1 .box5{
-            background-color: red;
-        }
-        .div1 .box2,.div1 .box4,.div1 .box6{
-            background-color: blue;
-        }
-        .div1 .box6{
-            width: 60px;
-            float: right;
-            margin-right: 0;
-        }
-        .div2{
-            width: 900px;
-            height: 30px;
-            border: 1px solid gray;
-            margin: 30px auto;
-        }
-        .div3{
-            width: 900px;
-            height: 300px;
-            margin: 0 auto;
-        }
-        .div3 .box1{
-            width:250px;
-            height: 300px;
-            /*border: 1px solid gray;*/
-            float: left;
-            position: relative;
-        }
-        .div3 .box2{
-            width:280px;
-            height: 300px;
-            /*border: 1px solid gray;*/
-            float: left;
-            margin-left: 60px;
-        }
-        .div3 .box3{
-            width:250px;
-            height: 300px;
-            /*border: 1px solid gray;*/
-            float: right;
-        }
-        img{
-            width: 250px;
-            height: 300px;
-        }
-        img.img2{
-            width: 280px;
-
-        }
-        img:hover{
-            transform: translate(-4px,-6px);
-            box-shadow: 3px 3px 15px #000;
-        }
-        .square{
-            width: 250px;
-            height: 250px;
-            border: 1px dotted red;
-            margin: 100px auto;
-            position: relative;
-            transform-style: preserve-3d;
-            /*transform: rotateY(45deg);*/
-            animation: gun 8s linear infinite;
-        }
-        .square div{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            text-align: center;
-            line-height: 250px;
-            font-size: 50px;
-            color: #daa520;
-        }
-        .left{
-            background-color: rgba(255,0,0,0.3);
-            transform-origin: left;
-            transform: rotateY(90deg) translateX(-125px);
-        }
-        .right{
-            background-color: rgba(0,0,255,0.3);
-            transform-origin: right;
-            transform: rotateY(90deg) translateX(125px);
-        }
-        .up{
-            background-color: rgba(255,255,0,0.3);
-            transform: translateZ(125px);
-        }
-        .down{
-            background-color: rgba(0,255,255,0.3);
-            transform: translateZ(-125px);
-        }
-        .face{
-            background-color: rgba(255,0,255,0.3);
-            transform: rotateX(90deg) translateZ(125px);
-
-        }
-        .back{
-            background-color: rgba(0,255,0);
-            transform: rotateX(-90deg) translateZ(125px);
-        }
-        @keyframes gun {
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>#空中漫步</title>
+    <style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    html {
+        background-color: transparent;
+        background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);
+        /*背景层的混合模式*/
+        background-blend-mode: screen;
+        text-align: center;
+    }
+    
+    .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: url("images/头像.jpg") no-repeat;
+        background-size: cover;
+        margin: 120px auto 30px;
+        cursor: pointer;
+        position: relative;
+    }
+    .avatarStart::after{
+    	position: absolute;
+    	left: -10px;
+    	top: -10px;
+    	content: '';
+    	width: 100px;
+    	height: 100px;
+    	border-radius: 50%;
+    	background: #fff;
+    	animation: bigger 1s infinite;
+    }
+    
+	@keyframes bigger {
             0%{
-                transform:rotateX(0deg) rotateY(0deg);
+                transform:scale(1);
+                opacity: 0.5;
             }
 
             100%{
-                transform:rotateX(360deg) rotateY(360deg);
+                transform:scale(1.5);
+                opacity: 0.1;
             }
         }
-    </style>
 
+    .span1 {
+        font: 40px "Microsoft yahei";
+        color: red;
+    }
+    
+    ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 240px;
+        height: 50px;
+        margin: 20px auto;
+        line-height: 50px;
+    }
+    
+    ul li {
+        float: left;
+    }
+    
+    ul li a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #000;
+        margin: 0px 10px;
+    }
+    
+    ul li a:hover {
+        color: #09dac9;
+    }
+    </style>
 </head>
+
 <body>
-<h1>#空中漫步</h1>
-<h3>这里有蜘蛛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-<div class="div1">
-    <div class="box1"></div>
-    <div class="box2"></div>
-    <div class="box3"></div>
-    <div class="box4"></div>
-    <div class="box5"></div>
-    <div class="box6"></div>
-</div>
-<div class="div2">
-</div>
-<div class="div3">
-    <div class="box1"><a class="img1" href="http://image.so.com/v?q=卡通蜘蛛&src=srp&correct=卡通蜘蛛&cmsid=414f243cb944fd636a5be3db65dfc8b3&cmran=0&cmras=0&gsrc=1#q=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&src=srp&correct=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&gsrc=1&lightboxindex=12&id=6466538fd3f19454f485f202f7577501&multiple=0&itemindex=0&dataindex=12&prevsn=0&currsn=0"><img src="images/01.jpg" title="这里有蜘蛛"/></a></div>
-    <div class="box2"><a href="http://image.so.com/v?q=卡通蜘蛛&src=srp&correct=卡通蜘蛛&cmsid=414f243cb944fd636a5be3db65dfc8b3&cmran=0&cmras=0&gsrc=1#q=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&src=srp&correct=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&gsrc=1&lightboxindex=12&id=6466538fd3f19454f485f202f7577501&multiple=0&itemindex=0&dataindex=12&prevsn=0&currsn=0"><img class="img2" src="images/02.jpg" title="这里有蜘蛛"/></a></div>
-    <div class="box3"><a href="http://image.so.com/v?q=卡通蜘蛛&src=srp&correct=卡通蜘蛛&cmsid=414f243cb944fd636a5be3db65dfc8b3&cmran=0&cmras=0&gsrc=1#q=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&src=srp&correct=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&gsrc=1&lightboxindex=12&id=6466538fd3f19454f485f202f7577501&multiple=0&itemindex=0&dataindex=12&prevsn=0&currsn=0"><img src="images/03.jpg" title="这里有蜘蛛"/></a></div>
-</div>
-<div class="square">
-    <a href="http://image.so.com/v?q=卡通蜘蛛&src=srp&correct=卡通蜘蛛&cmsid=414f243cb944fd636a5be3db65dfc8b3&cmran=0&cmras=0&gsrc=1#q=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&src=srp&correct=%E5%8D%A1%E9%80%9A%E8%9C%98%E8%9B%9B&gsrc=1&lightboxindex=12&id=6466538fd3f19454f485f202f7577501&multiple=0&itemindex=0&dataindex=12&prevsn=0&currsn=0">
-    <div class="up">这</div>
-    <div class="down">里</div>
-    <div class="left">有</div>
-    <div class="right">蜘</div>
-    <div class="face">蛛</div>
-    <div class="back">!</div>
-    </a>
-</div>
+    <div class="avatar"></div>
+    <span class="span1">天高海阔，鸟飞鱼跃</span>
+    <ul>
+        <li><a href="">知乎</a><span>|</span></li>
+        <li><a href="">blog</a><span>|</span></li>
+        <li><a href="">微博</a></li>
+    </ul>
+    <script type="text/javascript">
+    document.body.style.overflow = 'hidden';
+    var avatar = document.querySelector('.avatar');
+
+    avatar.onmouseover = function(){
+    	console.log(1);
+    	avatar.classList.add('avatarStart');
+    }
+    avatar.onmouseleave = function(){
+    	avatar.classList.remove('avatarStart');
+    }
+
+
+    </script>
 </body>
+
 </html>
